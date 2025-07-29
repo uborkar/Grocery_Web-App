@@ -1,0 +1,36 @@
+# Dependencies List for Garment Management System
+
+## Frontend Dependencies
+1. **Font Awesome**: 
+   - Used for icons in all HTML files.
+   - URL: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css
+
+2. **Chart.js**: 
+   - Used for rendering charts in `orderDetails.html`.
+   - URL: https://cdn.jsdelivr.net/npm/chart.js
+
+## Backend Dependencies
+1. **Express**: 
+   - Web framework for Node.js.
+   - Installed via npm: `npm install express`
+
+2. **Body-parser**: 
+   - Middleware for parsing incoming request bodies.
+   - Installed via npm: `npm install body-parser`
+
+3. **CORS**: 
+   - Middleware for enabling Cross-Origin Resource Sharing.
+   - Installed via npm: `npm install cors`
+
+4. **Bcryptjs**: 
+   - Library for hashing passwords.
+   - Installed via npm: `npm install bcryptjs`
+
+5. **Jsonwebtoken**: 
+   - Library for generating and verifying JWT tokens.
+   - Installed via npm: `npm install jsonwebtoken`
+
+## Database
+- **MySQL**: 
+   - Used for database management.
+   - SQL commands are provided in `garment_management.sql`.

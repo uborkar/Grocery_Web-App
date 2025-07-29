@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grocery product</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+    /* Global Reset and Typography */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #f6f6f6, #e8e8e8);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header Section */
+header {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.container2 {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 0;
+}
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2575fc;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+nav ul li a:hover {
+  color: #2575fc;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.hamburger.open i {
+  transform: rotate(90deg);
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #2575fc;
+}
+
+/* Toggle the visibility of the navigation menu on small screens */
+nav ul.active {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  top: 60px;
+  right: 0;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+ /* About Section */
+ .about-container {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .about-container h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-container p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .about-container .team {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+/* Hamburger icon styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    width: 100%;
+  }
+  
+  nav ul li {
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+}
+
+
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+
+/* Additional Responsive Adjustments for Very Small Screens */
+@media (max-width: 480px) {
+  th, td {
+    padding: 0.6rem;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .container2 {
+    width: 100%;
+    margin: 0 10px;
+  }
+}
+
+/* Footer Section */
+footer {
+  background: #232f3e;
+  color: #fff;
+  padding: 3rem 0;
+  font-size: 1rem;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+.footer-section {
+  width: 22%;
+}
+.footer-section h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #f1c40f;
+}
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+.footer-section ul li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+.footer-section ul li a:hover {
+  color: #f1c40f;
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+.footer-bottom p {
+  margin: 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    width: 80%;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .footer-section h4 {
+    font-size: 1.1rem;
+  }
+
+  .footer-section ul li {
+    font-size: 0.9rem;
+  }
+
+  .footer-bottom p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 2rem 0;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  .footer-section {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-section h4 {
+    font-size: 1rem;
+  }
+
+  .footer-section ul li {
+    font-size: 0.8rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 0 1rem;
+  }
+
+  .footer-section h4 {
+    font-size: 1rem;
+  }
+
+  .footer-section ul li {
+    font-size: 0.75rem;
+  }
+
+  .footer-bottom p {
+    font-size: 0.6rem;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <header>
+        <div class="container">
+          <div class="logo">Grocery Product</div>
+          <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/Products.html">Products</a></li>
+              <li><a href="/orderDetails.html">Orders</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="/contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      
+    
+      <div class="about-container">
+        <h2>About grocery product</h2>
+
+        <p>summarizes the key characteristics of an item, often including ingredients, nutritional information, and preparation instructions, to help customers decide what to buy. </p>
+        <p>It can also include details about the product's benefits, story, and even sensory details to enhance the customer's experience. </p>
+
+
+        <h3>Meet the Team</h3>
+        <div class="team">
+            <div class="team-member">
+                <img src="data:image/jpeg;base64,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" alt="Team Member 1">
+                <h4>John Doe</h4>
+                <p>CEO & Founder</p>
+            </div>
+            <div class="team-member">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/033/168/339/small_2x/a-young-black-man-in-a-suit-and-tie-ai-generative-free-photo.jpg" alt="Team Member 2">
+                <h4>Jane Smith</h4>
+                <p>Creative Director</p>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/Products.html">Products</a></li>
+              <li><a href="/orderDetails.html">Orders</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Social</h4>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 grocery product. All rights reserved.</p>
+      </div>
+    </footer>
+       
+    <script>
+   function toggleMenu() {
+  const nav = document.querySelector("nav ul");
+  const hamburger = document.querySelector(".hamburger");
+  
+  // Toggle the 'active' class for the nav menu and hamburger icon
+  nav.classList.toggle("active");
+  hamburger.classList.toggle("open");
+  
+  // Change the hamburger icon to 'X' when the menu is open
+  if (hamburger.classList.contains("open")) {
+    hamburger.innerHTML = '<i class="fas fa-times"></i>';
+  } else {
+    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+  }
+}
+ 
+    </script>
+  </body>
+</html>

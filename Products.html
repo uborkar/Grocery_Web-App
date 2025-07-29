@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grocery product</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+      /* Global Reset and Typography */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #f6f6f6, #e8e8e8);
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Header Section */
+      header {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+      }
+      .logo {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #2575fc;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+      nav ul li a:hover {
+        color: #2575fc;
+      }
+      .hamburger {
+        display: none;
+        font-size: 2rem;
+        cursor: pointer;
+      }
+      .hamburger.open {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.5rem;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(
+            135deg,
+            rgba(106, 17, 203, 0.8),
+            rgba(37, 117, 252, 0.8)
+          ),
+          url("https://t4.ftcdn.net/jpg/05/96/62/65/360_F_596626503_jrzjZNYStDexiWxQFqO7oCh6M8PdMlJs.jpg")
+            no-repeat center center/cover;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        text-align: center;
+        position: relative;
+      }
+      .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+      }
+      .hero p {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        max-width: 700px;
+        text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+      }
+      .hero-buttons {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .hero-buttons a {
+        text-decoration: none;
+        padding: 1rem 2.5rem;
+        border-radius: 30px;
+        font-size: 1.2rem;
+        transition: all 0.3s;
+        color: #fff;
+        background: #2575fc;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      }
+      .hero-buttons a:hover {
+        background: #fff;
+        color: #2575fc;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+      /* Features Section */
+.features {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5rem 0;
+  padding: 0 5%;
+  flex-wrap: wrap;
+}
+.feature {
+  text-align: center;
+  width: 30%;
+  margin: 2rem 0;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+.feature i {
+  font-size: 3rem;
+  color: #2575fc;
+  margin-bottom: 1rem;
+}
+.feature h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.feature p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Products Section */
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 4rem 0;
+    margin: 4rem auto;
+    max-width: 1200px;
+}
+
+.product-card {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%; /* Ensure product card takes up full available width */
+    max-width: 300px; /* Set a max-width to keep card size consistent */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.product-card h3 {
+    margin: 1rem 0;
+}
+
+.product-card p {
+    color: #555;
+}
+
+.product-card .price {
+    font-weight: bold;
+    color: #2575fc;
+    margin-top: 1rem;
+}
+
+.product-card button {
+    background: #2575fc;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.product-card button:hover {
+    background-color: #1d62b6;
+}
+
+/* Search Bar Section */
+.search-bar {
+    margin: 2rem auto;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Order Modal */
+#orderModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.order-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.order-form input,
+.order-form textarea {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.order-form button {
+    background: #2575fc;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.order-form button:hover {
+    background: #1d62b6;
+}
+
+/* Footer Section */
+footer {
+    background: #232f3e;
+    color: #fff;
+    padding: 3rem 0;
+    font-size: 1rem;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
+.footer-section {
+    width: 22%;
+}
+.footer-section h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #f1c40f;
+}
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+.footer-section ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+.footer-section ul li a:hover {
+    color: #f1c40f;
+}
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        width: 90%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 0 2%;
+    }
+
+    /* Header and Navigation */
+    header {
+        padding: 1rem 0;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.9);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        text-align: center;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 1rem 0;
+    }
+
+    /* Hamburger icon */
+    .hamburger {
+        display: block;
+        margin-left: 2rem;
+        cursor: pointer;
+    }
+
+    .hamburger.open .hamburger-line:nth-child(1) {
+        transform: rotate(45deg);
+        margin-top: 9px;
+    }
+
+    .hamburger.open .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.open .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg);
+        margin-top: -9px;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+    }
+
+    .footer-section {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.9rem;
+    }
+}
+
+/* Footer Section */
+footer {
+    background: #232f3e;
+    color: #fff;
+    padding: 3rem 0;
+    font-size: 1rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    width: 22%;
+    margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #f1c40f;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #f1c40f;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #ccc;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        width: 80%;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .footer-section h4 {
+        font-size: 1.1rem;
+    }
+
+    .footer-section ul li {
+        font-size: 0.9rem;
+    }
+
+    .footer-bottom p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 2rem 0;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 1rem;
+    }
+
+    .footer-section {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-section h4 {
+        font-size: 1rem;
+    }
+
+    .footer-section ul li {
+        font-size: 0.8rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        padding: 0 1rem;
+    }
+
+    .footer-section h4 {
+        font-size: 1rem;
+    }
+
+    .footer-section ul li {
+        font-size: 0.75rem;
+    }
+
+    .footer-bottom p {
+        font-size: 0.6rem;
+    }
+}
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">Grocery Product</div>
+        <div class="hamburger" onclick="toggleMenu()">
+          <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="/orderDetails.html">Orders</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="search-bar">
+        <input type="text" id="searchInput" onkeyup="filterProducts()" placeholder="Search products...">
+    </div>
+
+    <div class="products-container">
+        <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfk9W7jWejAg1GASGKhUy0mqM9PIvhgoYTzA&s" alt="Product 1">
+            <h3>Natural ingredients</h3>
+            <p>Muesli Fitness Nutritious Energy, Gluten Free (500g)</p>
+            <div class="price">$29.99</div>
+            <button onclick="openModal('bag', 29.99, event)">Purchase</button>
+        </div>
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/5136Y63Lq4L._SL500_.jpg" alt="Product 2">
+            <h3>Tata Salt</h3>
+            <p>Tata Salt, Vacuum Evaporated Iodised Salt</p>
+            <div class="price">$49.99</div>
+            <button onclick="openModal('Product 2', 49.99, event)">Purchase</button>
+        </div>
+        <div class="product-card">
+            <img src="https://as2.ftcdn.net/v2/jpg/02/89/44/67/1000_F_289446727_vRX6ctHc8dkaeT0zcKnHSu2w5TWOVtJH.jpg" alt="Product 3">
+            <h3>Variety spices and herbs</h3>
+            <p>Variety spices and herbs</p>
+            <div class="price">$39.99</div>
+            <button onclick="openModal('Product 3', 39.99, event)">Purchase</button>
+        </div>
+            <div class="product-card">
+            <img src="https://www.sgr777foods.com/wp-content/uploads/2025/02/karakulambu-Rice-mix_2.webp" alt="Product 4">
+            <h3>Dhideer® Instant Kaara kuzhambu</h3>
+            <p>Dhideer® Instant Kaara kuzhambu (Spicy Veg Curry) Rice Paste 300g+100g</p>
+            <div class="price">$.99</div>
+            <button onclick="openModal('kudta', 29.99, event)">Purchase</button>
+        </div>
+         <div class="product-card">
+            <img src="https://www.sgr777foods.com/wp-content/uploads/2025/02/Group-8-3.webp" alt="Product 5">
+            <h3>AMLA PICKLE</h3>
+            <p>
+
+The Amla Pickle is a tangy and nutritious delight made with fresh Indian gooseberries.</p>
+            <div class="price">$.99</div>
+            <button onclick="openModal('new kudta', 29.99, event)">Purchase</button>
+        </div>
+         <div class="product-card">
+            <img src="https://www.sgr777foods.com/wp-content/uploads/2025/02/madras-sambar-power.webp" alt="Product 6">
+            <h3>MADRAS SAMBAR POWDER</h3>
+            <p>
+Recreate the taste of traditional South Indian sambar with our Madras Sambar Powder </p>
+            <div class="price">$.99</div>
+            <button onclick="openModal('kudta', 29.99, event)">Purchase</button>
+        </div>
+         <div class="product-card">
+            <img src="https://www.sgr777foods.com/wp-content/uploads/2025/02/image_2025_02_17T12_07_30_850Z.webp" alt="Product 7">
+            <h3>CURD CHILLY</h3>
+            <p>
+Our Vathal Varieties start with this all-time favorite</p>
+            <div class="price">$55.99</div>
+            <button onclick="openModal('short dress', 29.99, event)">Purchase</button>
+        </div>
+         <div class="product-card">
+            <img src="https://www.sgr777foods.com/wp-content/uploads/2025/02/imgpsh_fullsize_anim-10.webp" alt="Product 8">
+            <h3>ROSE SHARBAT</h3>
+            <p>
+
+Indulge in the timeless charm of 777 Sharbat with our Rose Sharbat.</p>
+</p>
+            <div class="price">$65.99</div>
+            <button onclick="openModal('short kurti', 29.99, event)">Purchase</button>
+        </div>
+         <div class="product-card">
+            <img src="https://www.sgr777foods.com/wp-content/uploads/2025/02/image_2025_02_18T05_05_39_059Z.webp" alt="Product 9">
+            <h3>HING POWER</h3>
+            <p>
+Our Asafoetida Powder is a fragrant spice made from the resin of the Ferula plant and compounded for daily use.</p>
+            <div class="price">$76.99</div>
+            <button onclick="openModal('gaun', 29.99, event)">Purchase</button>
+        </div>
+        
+    </div>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/Products.html">Products</a></li>
+              <li><a href="/orderDetails.html">Orders</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Social</h4>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 grocery product. All rights reserved.</p>
+      </div>
+    </footer>
+    <div id="orderModal">
+        <div class="order-form">
+            <h2 id="orderModalTitle"></h2>
+            <p id="orderModalPrice"></p>
+            <input type="text" id="name" placeholder="Enter your name" required>
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <input type="tel" id="phone" placeholder="Enter your phone" required>
+            <textarea id="address" placeholder="Enter your address" required></textarea>
+            <button onclick="submitOrder()">Submit Order</button>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+    <script>
+      function toggleMenu() {
+        const nav = document.querySelector("nav ul");
+        const hamburger = document.querySelector(".hamburger");
+        nav.classList.toggle("active");
+        hamburger.classList.toggle("open");
+        if (hamburger.classList.contains("open")) {
+          hamburger.innerHTML = '<i class="fas fa-times"></i>';
+        } else {
+          hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+      }
+      function openModal(productName, productPrice, event) {
+            event.stopPropagation(); // Prevent modal from opening on card click
+            document.getElementById('orderModalTitle').innerText = productName;
+            document.getElementById('orderModalPrice').innerText = `$${productPrice}`;
+            document.getElementById('orderModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('orderModal').style.display = 'none';
+        }
+
+        function submitOrder() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            const productName = document.getElementById('orderModalTitle').innerText;
+            const productPrice = document.getElementById('orderModalPrice').innerText;
+
+            if (!name || !email || !phone || !address) {
+                alert('Please fill all fields');
+                return;
+            }
+
+            const orderData = {
+                product_name: productName,
+                product_price: parseFloat(productPrice.replace('$', '')),
+                customer_name: name,
+                customer_email: email,
+                customer_phone: phone,
+                customer_address: address
+            };
+
+            fetch('http://localhost:3000/submitOrder', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(orderData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                closeModal();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error processing your order.');
+            });
+        }
+
+        function filterProducts() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach(card => {
+                const title = card.querySelector('h3').innerText.toLowerCase();
+                if (title.includes(input)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grocery product</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+    /* Global Reset and Typography */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #f6f6f6, #e8e8e8);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header Section */
+header {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.container2 {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 0;
+}
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2575fc;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+nav ul li a:hover {
+  color: #2575fc;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.hamburger.open i {
+  transform: rotate(90deg);
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #2575fc;
+}
+
+/* Toggle the visibility of the navigation menu on small screens */
+nav ul.active {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  top: 60px;
+  right: 0;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+ /* Contact Section */
+ .contact-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 5rem 0;
+            margin: auto;
+            max-width: 1200px;
+        }
+
+        .contact-details {
+            width: 45%;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-details h2 {
+            color: #2575fc;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-details p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .contact-details .contact-item {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-details .contact-item i {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: #2575fc;
+        }
+
+        .contact-details .contact-item span {
+            font-size: 1.1rem;
+        }
+
+        .contact-details .contact-item a {
+            color: #2575fc;
+            text-decoration: none;
+        }
+
+        .map-container {
+            width: 45%;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-container h2 {
+            color: #2575fc;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+        }
+/* Hamburger icon styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    width: 100%;
+  }
+  
+  nav ul li {
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+  .contact-container {
+                flex-direction: column;
+            }
+
+            .contact-details,
+            .map-container {
+                width: 100%;
+                margin-bottom: 2rem;
+            }
+        
+}
+
+
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+
+/* Additional Responsive Adjustments for Very Small Screens */
+@media (max-width: 480px) {
+  th, td {
+    padding: 0.6rem;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .container2 {
+    width: 100%;
+    margin: 0 10px;
+  }
+}
+
+/* Footer Section */
+footer {
+  background: #232f3e;
+  color: #fff;
+  padding: 3rem 0;
+  font-size: 1rem;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+.footer-section {
+  width: 22%;
+}
+.footer-section h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #f1c40f;
+}
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+.footer-section ul li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+.footer-section ul li a:hover {
+  color: #f1c40f;
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+.footer-bottom p {
+  margin: 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    width: 80%;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .footer-section h4 {
+    font-size: 1.1rem;
+  }
+
+  .footer-section ul li {
+    font-size: 0.9rem;
+  }
+
+  .footer-bottom p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 2rem 0;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  .footer-section {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-section h4 {
+    font-size: 1rem;
+  }
+
+  .footer-section ul li {
+    font-size: 0.8rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 0 1rem;
+  }
+
+  .footer-section h4 {
+    font-size: 1rem;
+  }
+
+  .footer-section ul li {
+    font-size: 0.75rem;
+  }
+
+  .footer-bottom p {
+    font-size: 0.6rem;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <header>
+        <div class="container">
+          <div class="logo">Grocery Product</div>
+          <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/Products.html">Products</a></li>
+              <li><a href="/orderDetails.html">Orders</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      
+      <div class="contact-container">
+        <!-- Contact Details -->
+        <div class="contact-details">
+            <h2>Contact Details</h2>
+            <p>If you have any questions or need more information, feel free to contact us. We're here to help!</p>
+
+            <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <span>Phone: <a href="tel:+1234567890">+1 234 567 890</a></span>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>Email: <a href="mailto:info@fashionworld.com">info@fashionworld.com</a></span>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Address: 123 Fashion St, Fashion City, 56789</span>
+            </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="map-container">
+            <h2>Our Location</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.191788015981!2d144.96305791531612!3d-37.81520677975151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4cb67e93b5%3A0x5045675218ce8e0!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1608097220484!5m2!1sen!2sau" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+    
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul>
+              <li><a href="/Products.html">Products</a></li>
+              <li><a href="/orderDetails.html">Orders</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Social</h4>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 grocery product. All rights reserved.</p>
+      </div>
+    </footer>
+       
+    <script>
+   function toggleMenu() {
+  const nav = document.querySelector("nav ul");
+  const hamburger = document.querySelector(".hamburger");
+  
+  // Toggle the 'active' class for the nav menu and hamburger icon
+  nav.classList.toggle("active");
+  hamburger.classList.toggle("open");
+  
+  // Change the hamburger icon to 'X' when the menu is open
+  if (hamburger.classList.contains("open")) {
+    hamburger.innerHTML = '<i class="fas fa-times"></i>';
+  } else {
+    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+  }
+}
+ 
+    </script>
+  </body>
+</html>

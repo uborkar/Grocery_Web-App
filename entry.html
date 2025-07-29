@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading - Grocery Product</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #e3f6f5, #dff6f0);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Loader Container */
+        .loader-container {
+            text-align: center;
+            position: relative;
+        }
+
+        /* Sewing Machine Icon */
+        .sewing-machine {
+            width: 100px;
+            height: 100px;
+            background: #fff;
+            border: 3px solid #6c63ff;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            animation: rotateIcon 2s infinite ease-in-out;
+        }
+
+        .sewing-machine::before {
+            content: "🧵";
+            font-size: 2.5rem;
+            position: absolute;
+        }
+
+        /* Fabric Animation */
+        .fabric-strip {
+            width: 80px;
+            height: 8px;
+            background: linear-gradient(90deg, #6c63ff, #c3cfe2);
+            margin: 10px auto;
+            border-radius: 5px;
+            position: relative;
+            animation: slideFabric 2s infinite ease-in-out;
+        }
+
+        /* Text Section */
+        .loader-text {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #6c63ff;
+            margin-top: 20px;
+            animation: fadeText 1.5s infinite alternate;
+        }
+
+        /* Animated Progress Bar */
+        .progress-bar {
+            width: 100%;
+            max-width: 300px;
+            height: 10px;
+            background: rgba(108, 99, 255, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px auto;
+            position: relative;
+        }
+
+        .progress {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #6c63ff, #c3cfe2);
+            animation: progressLoad 4s ease-in-out forwards;
+        }
+
+        /* Sewing Machine Rotate Animation */
+        @keyframes rotateIcon {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Fabric Sliding Animation */
+        @keyframes slideFabric {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(30px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        /* Progress Bar Animation */
+        @keyframes progressLoad {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        /* Text Fade Animation */
+        @keyframes fadeText {
+            0% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .sewing-machine {
+                width: 80px;
+                height: 80px;
+            }
+
+            .sewing-machine::before {
+                font-size: 2rem;
+            }
+
+            .loader-text {
+                font-size: 1.4rem;
+            }
+
+            .progress-bar {
+                max-width: 250px;
+                height: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sewing-machine {
+                width: 60px;
+                height: 60px;
+            }
+
+            .sewing-machine::before {
+                font-size: 1.5rem;
+            }
+
+            .loader-text {
+                font-size: 1.2rem;
+            }
+
+            .progress-bar {
+                max-width: 200px;
+                height: 6px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader-container">
+        <div class="sewing-machine"></div>
+        <div class="loader-text">We’re stitching your experience...</div>
+        <div class="fabric-strip"></div>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+    </div>
+
+    <script>
+        // Redirect after loading
+        window.onload = function () {
+            setTimeout(() => {
+                window.location.href = "/signup.html"; // Redirect to signup page
+            }, 5000); // Adjust duration for the loading
+        }
+    </script>
+</body>
+
+</html>
