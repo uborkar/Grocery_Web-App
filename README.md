@@ -35,14 +35,16 @@ A full-stack grocery web application that allows users to browse products, add t
 
 ## 📁 Project Structure
 Grocery_Web-App
-- GMS/
-|── client/ 
-├── server.js # Node + Express Server
-├── routes/ # Express Routes
-├── models/ # MongoDB Models
-├── package.json
-├── .gitignore
-├── README.md
+GMS/
+│
+├── client/          
+├── server.js         # Node + Express Server Entry Point
+├── routes/           # Express Routes
+├── models/          
+├── package.json      # Project Metadata & Scripts
+├── .gitignore        # Git Ignore Rules
+└── README.md         # Project Documentation
+
 
 ## ⚙️ Setup & Run Locally
 ### 🖥️ Steps
