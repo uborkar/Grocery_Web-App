@@ -74,6 +74,10 @@ vs code open with live server
 - Abhishek Pawar
 - Snehal Mali
 
+## 🎥 Project Demo
+
+[▶️ Watch the Demo Video](https://github.com/uborkar/Grocery_Web-App/git-clone.mp4)
+
  
 MIT License
 
