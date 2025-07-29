@@ -76,7 +76,7 @@ vs code open with live server
 
 ## 🎥 Project Demo
 
-[▶️ Watch the Demo Video](https://github.com/uborkar/Grocery_Web-App/git-clone.mp4)
+[▶️ Watch the Demo Video](https://github.com/uborkar/Grocery_Web-App/blob/main/git-clone.mp4)
 
  
 MIT License
