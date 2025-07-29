@@ -35,6 +35,7 @@ A full-stack grocery web application that allows users to browse products, add t
 
 ## 📁 Project Structure
 Grocery_Web-App
+```
 GMS/
 │
 ├── client/          
